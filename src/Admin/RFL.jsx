@@ -5,5 +5,8 @@ function RFL() {
      { Organization: "System", link: "www.dummylink.com", Post:"" },
      { Organization: "NetSol", link: "Mariam Javed", Post:"" },
    ];
+   return(
+    <div></div>
+   );
 }
 export default RFL;
