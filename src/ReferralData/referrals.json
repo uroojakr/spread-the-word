@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "referralCode": "ABC123",
+    "status": "Pending"
+  },
+  {
+    "id": 2,
+    "referralCode": "DEF456",
+    "status": "Accepted"
+  },
+  {
+    "id": 3,
+    "referralCode": "GHI789",
+    "status": "Rejected"
+  }
+]
