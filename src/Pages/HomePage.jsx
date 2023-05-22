@@ -14,13 +14,13 @@ const Home = () => {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        backgroundImage: `url(${bgImage})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
+        backgroundImage: `url(${bgImage}) `,
+        backgroundSize: "cover ",
+        backgroundPosition: "center !important",
+        backgroundRepeat: "no-repeat !important",
         backgroundAttachment: "fixed",
-        backgroundBlendMode: "multiply",
-        background: "linear-gradient(to bottom, #6A00FF, #000000)",
+         backgroundBlendMode: "multiply",
+        background: "linear-gradient(to bottom, #6A00FF, #000000) ",
       }}
     >
       <Typography

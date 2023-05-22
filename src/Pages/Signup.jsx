@@ -31,7 +31,7 @@ const useStyles = makeStyles(() => ({
   buttonContainer: {
     display: "flex",
     justifyContent: "center",
-    marginTop: "32px", 
+    marginTop: "32px",
   },
 }));
 
@@ -53,7 +53,7 @@ function Signup() {
           <img
             src={Signupside}
             alt="Illustration"
-            style={{ height: "130%", objectFit: "cover" }}
+            style={{ height: "120%", objectFit: "cover" }}
           />
         </Grid>
 

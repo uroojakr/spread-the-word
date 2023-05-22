@@ -33,7 +33,10 @@ function UserAppBar() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar
+      position="static"
+      style={{ background: "linear-gradient(to left, #6A00FF, #000000)" }}
+    >
       <Toolbar>
         <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
           <IconButton
@@ -118,7 +121,7 @@ function UserAppBar() {
             <MenuItem
               onClick={handleCloseUserMenu}
               component={Link}
-              to="/settings"
+              to="/User/Settings"
             >
               Settings
             </MenuItem>
