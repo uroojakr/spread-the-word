@@ -1,12 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import referralsReducer from "./referralReducers";
-
-const rootReducer = {
-  referrals: referralsReducer,
-};
+import referralReducer from "./referralSlice";
 
 const store = configureStore({
-  reducer: rootReducer,
+  reducer: {
+    referrals: referralReducer,
+  },
 });
 
 export default store;

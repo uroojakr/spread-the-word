@@ -1,12 +1,14 @@
 import React, { useEffect } from "react";
-import { connect } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { fetchReferrals } from "../Redux/referralActiontypes";
 
-function RFL({ referrals, fetchReferrals }) {
+function RFL() {
+  const dispatch = useDispatch();
+  const referrals = useSelector((state) => state.referrals);
+
   useEffect(() => {
-    // Fetch the referrals when the component mounts
-    fetchReferrals();
-  }, [fetchReferrals]);
+    dispatch(fetchReferrals());
+  }, [dispatch]);
 
   return (
     <div>
@@ -22,16 +24,39 @@ function RFL({ referrals, fetchReferrals }) {
   );
 }
 
-const mapStateToProps = (state) => {
-  return {
-    referrals: state.referrals.referrals,
-  };
-};
+export default RFL;
+// import React, { useEffect } from "react";
+// import { connect } from "react-redux";
+// import { fetchReferrals } from "../Redux/referralActiontypes";
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    fetchReferrals: () => dispatch(fetchReferrals()),
-  };
-};
+// function RFL({ referrals, fetchReferrals }) {
+//   useEffect(() => {
+//     fetchReferrals(); // Dispatch the fetchReferrals action
+//   }, [fetchReferrals]);
 
-export default connect(mapStateToProps, mapDispatchToProps)(RFL);
+//   return (
+//     <div>
+//       <h1>Admin RFL</h1>
+//       <ul>
+//         {referrals.map((referral) => (
+//           <li key={referral.id}>
+//             Referral Code: {referral.referralCode}, Status: {referral.status}
+//           </li>
+//         ))}
+//       </ul>
+//     </div>
+//   );
+// }
+
+// const mapStateToProps = (state) => {
+//   return {
+//     referrals: state.referrals,
+//   };
+// };
+
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     fetchReferrals: () => dispatch(fetchReferrals()),
+//   };
+// };
+// export default RFL;

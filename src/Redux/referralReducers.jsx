@@ -3,7 +3,6 @@ import {
   UPDATE_REFERRAL_STATUS,
   FETCH_REFERRALS,
 } from "./referralActiontypes";
-import referralsData from "../ReferralData/referrals.json";
 
 
 const initialState = {
@@ -13,9 +12,9 @@ const initialState = {
 const referralsReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_REFERRAL:
-    // ...
+      break;
     case UPDATE_REFERRAL_STATUS:
-    // ...
+      break;
     case FETCH_REFERRALS:
       return {
         ...state,
@@ -26,19 +25,4 @@ const referralsReducer = (state = initialState, action) => {
   }
 };
 
-
-const fetchReferrals = () => {
-  return (dispatch) => {
-  
-    setTimeout(() => {
-     
-      dispatch({
-        type: FETCH_REFERRALS,
-        payload: referralsData,
-      });
-    }, 1000);
-  };
-};
-
-export { fetchReferrals };
 export default referralsReducer;
