@@ -1,10 +1,11 @@
-import { createAsyncThunk } from "@reduxjs/toolkit";
+import referralsData from "../path/to/referralsData.json";
+import { fetchReferrals } from "./referralSlice";
 
-export const fetchReferrals = createAsyncThunk(
-  
-  async () => {
-    const response = await fetch("ReferralData/referrals.json");
-    const data = await response.json();
-    return data;
-  }
-);
+export const fetchReferrals = () => {
+  return (dispatch) => {
+    // Simulate an asynchronous API call
+    setTimeout(() => {
+      dispatch(fetchReferrals(referralsData));
+    }, 1000);
+  };
+};

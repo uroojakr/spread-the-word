@@ -1,84 +1,72 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchReferrals } from "../Redux/referralSlice";
 import {
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
-  Typography,
   Table,
   TableBody,
   TableCell,
   TableContainer,
   TableHead,
   TableRow,
+  Paper,
   TextField,
+  Typography,
 } from "@mui/material";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-function UserStatus() {
+function RFL() {
+  const dispatch = useDispatch();
+  const referrals = useSelector((state) => state.referrals.referrals);
   const [searchTerm, setSearchTerm] = useState("");
-  const userInformation = [
-    { status: "Applied", name: "Ahmed Naveed" },
-    { status: "Applied", name: "Sarah Khan" },
-    { status: "Applied", name: "Mariam Javed" },
-  ];
 
-  const filteredUserInformation = userInformation.filter((info) =>
-    info.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  useEffect(() => {
+    dispatch(fetchReferrals());
+  }, [dispatch]);
 
-  const handleSearchChange = (event) => {
+  const handleSearch = (event) => {
     setSearchTerm(event.target.value);
   };
 
+  const filteredReferrals = referrals.filter((referral) =>
+    referral.referralCode.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div>
+      <h1>Admin RFL</h1>
       <TextField
         label="Search"
         variant="outlined"
         value={searchTerm}
-        onChange={handleSearchChange}
-        style={{ marginBottom: "16px" }}
+        onChange={handleSearch}
+        sx={{ width: 300 }} // Set the width to 300 pixels
       />
 
-      {filteredUserInformation.length > 0 ? (
-        filteredUserInformation.map((info, index) => (
-          <Accordion key={index}>
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls={`user-info-content${index}`}
-              id={`user-info-header${index}`}
-            >
-              <Typography variant="h6">
-                User Information #{index + 1}
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <TableContainer>
-                <Table>
-                  <TableHead>
-                    <TableRow>
-                      <TableCell>Status</TableCell>
-                      <TableCell>Name</TableCell>
-                    </TableRow>
-                  </TableHead>
-                  <TableBody>
-                    <TableRow>
-                      <TableCell>{info.status}</TableCell>
-                      <TableCell>{info.name}</TableCell>
-                    </TableRow>
-                  </TableBody>
-                </Table>
-              </TableContainer>
-            </AccordionDetails>
-          </Accordion>
-        ))
-      ) : (
-        <Typography variant="body1">
-          No matching user information found.
-        </Typography>
-      )}
+      <TableContainer component={Paper}>
+        {filteredReferrals.length > 0 ? (
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell>Referral Code</TableCell>
+                <TableCell>Status</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {filteredReferrals.map((referral) => (
+                <TableRow key={referral.id}>
+                  <TableCell>{referral.referralCode}</TableCell>
+                  <TableCell>{referral.status}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        ) : (
+          <Typography variant="body1">
+            No referrals found matching the search term.
+          </Typography>
+        )}
+      </TableContainer>
     </div>
   );
 }
 
-export default UserStatus;
+export default RFL;
