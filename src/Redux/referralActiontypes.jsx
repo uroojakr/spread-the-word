@@ -1,4 +1,4 @@
-import referralsData from "../path/to/referralsData.json";
+import referralsData from "../Redux/referralsData.json";
 import { fetchReferrals } from "./referralSlice";
 
 export const fetchReferrals = () => {
