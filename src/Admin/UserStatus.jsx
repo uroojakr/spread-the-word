@@ -32,7 +32,7 @@ function RFL() {
 
   return (
     <div>
-      <h1>Admin RFL</h1>
+      <h1>User RFL</h1>
       <TextField
         label="Search"
         variant="outlined"
