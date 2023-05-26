@@ -13,17 +13,11 @@ import {
   TableContainer,
   TableHead,
   TableRow,
-  Paper,
   Button,
   TextField,
-  makeStyles,
 } from "@material-ui/core";
 
-// const useStyles = makeStyles((theme) => ({
-//   container: {
-//     marginTop: theme.spacing(8), // Adjust the spacing as per your requirement
-//   },
-// }));
+
 function RFL() {
   const dispatch = useDispatch();
   const referrals = useSelector((state) => state.referrals.referrals);
@@ -88,7 +82,7 @@ function RFL() {
         label="Status"
       />
       <Button onClick={handleAddReferral}>Add Referral</Button>
-      <TableContainer component={Paper}>
+      <TableContainer >
         <Table>
           <TableHead>
             <TableRow>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import CustomTextField from "../Components/Textfield";
 import CustomButton from "../Components/Buttons";
+import { Box, Container, Typography } from "@mui/material";
 
 function Settings() {
   const [adminInfo, setAdminInfo] = useState({
@@ -23,34 +24,54 @@ function Settings() {
   };
 
   return (
-    <div>
-      <h1>Settings</h1>
-      <form onSubmit={handleSubmit}>
-        <CustomTextField
-          label="Name"
-          name="name"
-          value={adminInfo.name}
-          onChange={handleChange}
-        />
+    <Container maxWidth="sm">
+      {" "}
+      {/* Center the content */}
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          height: "70vh", // Adjust the height as per your requirement
+        }}
+      >
+        <Typography variant="h4" component="h1" sx={{ marginBottom: "32px" }}>
+          Settings
+        </Typography>
+        <form onSubmit={handleSubmit}>
+          <Box sx={{ marginBottom: "16px" }}>
+            <CustomTextField
+              label="Name"
+              name="name"
+              value={adminInfo.name}
+              onChange={handleChange}
+            />
+          </Box>
 
-        <CustomTextField
-          label="Email"
-          name="email"
-          value={adminInfo.email}
-          onChange={handleChange}
-        />
+          <Box sx={{ marginBottom: "16px" }}>
+            <CustomTextField
+              label="Email"
+              name="email"
+              value={adminInfo.email}
+              onChange={handleChange}
+            />
+          </Box>
 
-        <CustomTextField
-          label="Password"
-          name="password"
-          type="password"
-          value={adminInfo.password}
-          onChange={handleChange}
-        />
+          <Box sx={{ marginBottom: "16px" }}>
+            <CustomTextField
+              label="Password"
+              name="password"
+              type="password"
+              value={adminInfo.password}
+              onChange={handleChange}
+            />
+          </Box>
 
-        <CustomButton label="Update" type="submit" />
-      </form>
-    </div>
+          <CustomButton label="Update" type="submit" />
+        </form>
+      </Box>
+    </Container>
   );
 }
 

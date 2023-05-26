@@ -33,12 +33,14 @@ function AdminAppBar() {
   };
 
   return (
-    <AppBar
-      position="static"
-      style={{ background: "linear-gradient(to left, #6A00FF, #000000)" }}
-    >
+    <AppBar position="static" sx={{ bgcolor: "#6A00FF" }}>
       <Toolbar>
-        <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+        <Box
+          sx={{
+            flexGrow: 1,
+            display: { xs: "flex", md: "none" },
+          }}
+        >
           <IconButton
             size="large"
             edge="start"
@@ -78,9 +80,21 @@ function AdminAppBar() {
           </Menu>
         </Box>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          Admin Dashboard
+          <Link
+            to="/Admin/"
+            style={{ color: "inherit", textDecoration: "none" }}
+          >
+            Admin Dashboard
+          </Link>
         </Typography>
-        <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+        <Box
+          sx={{
+            flexGrow: 1,
+            display: { xs: "none", md: "flex" },
+            justifyContent: "space-between", // Adjust the spacing as per your requirement
+            width: "40px", // Adjust the width as per your requirement
+          }}
+        >
           <MenuItem
             onClick={handleCloseNavMenu}
             component={Link}

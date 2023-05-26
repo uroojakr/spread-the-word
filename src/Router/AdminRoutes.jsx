@@ -17,7 +17,7 @@ function AdminRoutes() {
         <Route path="/userstatus" element={<UserStatus />} />
         <Route path="/rewards" element={<Rewards />} />
         <Route path="/rfl" element={<RFL />} />
-        <Route path="/settings" element={<Settings />} />
+        <Route path="/settings" element={<Settings />}/>
       </Routes>
     </>
   );
