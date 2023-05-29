@@ -20,14 +20,14 @@ function ChatBox({ onClose }) {
       <Typography variant="body2">
         This is a small chat box component.
       </Typography>
-      <Button
+      {/* <Button
         onClick={onClose}
         variant="contained"
         color="primary"
         size="small"
       >
         Close
-      </Button>
+      </Button> */}
     </Box>
   );
 }

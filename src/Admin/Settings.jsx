@@ -33,7 +33,7 @@ function Settings() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          height: "70vh", // Adjust the height as per your requirement
+          height: "70vh", 
         }}
       >
         <Typography variant="h4" component="h1" sx={{ marginBottom: "32px" }}>

@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function CustomButton({ label, to, variant, color }) {
+function CustomButton({ label, to, variant, color,...rest }) {
   const classes = useStyles();
   const navigate = useNavigate();
 
@@ -32,6 +32,7 @@ function CustomButton({ label, to, variant, color }) {
       onClick={handleClick}
       component={Link}
       to={to}
+      {...rest} 
     >
       {label}
     </Button>

@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
   },
   searchInput: {
-    width: 300, // Adjust the width as needed
+    width: 300,
   },
 }));
 

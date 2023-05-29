@@ -4,6 +4,8 @@ import referralsData from "../ReferralData/referrals.json";
 const initialState = {
   referrals: [],
 };
+// referral api ko fetch ki trha use krna hai
+//left menu, sticky appbar, achy se place, margin
 
 const referralSlice = createSlice({
   name: "referrals",

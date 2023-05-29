@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Typography, Card, CardContent, Grid } from "@mui/material";
+import { Box, Typography, Card, CardContent, Grid, Button } from "@mui/material";
 import CustomButton from "../Components/Buttons";
 
 const rewardsData = [
