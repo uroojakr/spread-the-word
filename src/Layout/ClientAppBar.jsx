@@ -168,7 +168,7 @@ function ClientAppBar() {
   };
 
   return (
-    <AppBar position="static" sx={{ bgcolor: "#6A00FF" }}>
+    <AppBar position="sticky" sx={{ bgcolor: "#6A00FF" }}>
       <Toolbar>
         <Box
           sx={{
@@ -242,7 +242,7 @@ function ClientAppBar() {
             component={Link}
             to="/User/RFLuser"
           >
-           RFLs
+            RFLs
           </MenuItem>
           <MenuItem
             onClick={handleCloseNavMenu}

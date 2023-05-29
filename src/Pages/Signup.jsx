@@ -1,5 +1,6 @@
 import React from "react";
 import { makeStyles } from "@mui/styles";
+import { Box } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import CustomButton from "../Components/Buttons";
@@ -63,6 +64,7 @@ function Signup() {
               Sign Up
             </Typography>
             <CustomTextField label="Full Name" className={classes.textField} />
+            <Box mt={3}/>
             <CustomTextField label="Email" className={classes.textField} />
             <CustomTextField
               label="Confirmation Number"

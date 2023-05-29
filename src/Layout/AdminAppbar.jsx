@@ -33,7 +33,7 @@ function AdminAppBar() {
   };
 
   return (
-    <AppBar position="static" sx={{ bgcolor: "#6A00FF" }}>
+    <AppBar position="sticky" sx={{ bgcolor: "#6A00FF" }}>
       <Toolbar>
         <Box
           sx={{
